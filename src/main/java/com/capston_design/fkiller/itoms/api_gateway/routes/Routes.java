@@ -24,7 +24,7 @@ public class Routes {
     public RouterFunction<ServerResponse> serviceDeskSwaggerRoute() {
         return GatewayRouterFunctions.route("service_desk_swagger")
                 .route(RequestPredicates.path("/aggregate/service-desk/v3/api-docs"), HandlerFunctions.http("http://localhost:8080"))
-                .filter(setPath("/api-docs"))
+                .filter(setPath("/v3/api-docs"))
                 .build();
     }
 
@@ -39,7 +39,7 @@ public class Routes {
     public RouterFunction<ServerResponse> userServiceSwaggerRoute() {
         return GatewayRouterFunctions.route("user_service_swagger")
                 .route(RequestPredicates.path("/aggregate/user-service/v3/api-docs"), HandlerFunctions.http("http://localhost:8081"))
-                .filter(setPath("/api-docs"))
+                .filter(setPath("/v3/api-docs"))
                 .build();
     }
 
